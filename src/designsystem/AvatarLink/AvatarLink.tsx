@@ -10,13 +10,7 @@ interface AvatarLinkProps {
   onClick?: () => void;
 }
 
-export const AvatarLink = ({
-  imgSrc,
-  alt,
-  size,
-  href,
-  ...props
-}: AvatarLinkProps) => {
+export const AvatarLink = ({ imgSrc, alt, size, href }: AvatarLinkProps) => {
   return (
     <Link href={href}>
       <Image

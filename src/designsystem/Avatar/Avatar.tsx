@@ -7,7 +7,7 @@ interface AvatarProps {
   size?: "small" | "medium" | "large";
 }
 
-export const Avatar = ({ imgSrc, alt, size, ...props }: AvatarProps) => {
+export const Avatar = ({ imgSrc, alt, size }: AvatarProps) => {
   return (
     <Image
       src={imgSrc}

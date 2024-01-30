@@ -5,17 +5,17 @@ interface AvatarButtonProps {
   imgSrc: string;
   alt: string;
   size?: "small" | "medium" | "large";
-  onClick?: () => void;
+  onClick: () => void;
 }
 
 export const AvatarButton = ({
   imgSrc,
   alt,
   size,
-  ...props
+  onClick,
 }: AvatarButtonProps) => {
   return (
-    <button onClick={props.onClick}>
+    <button onClick={onClick}>
       <Image
         src={imgSrc}
         width={50}
