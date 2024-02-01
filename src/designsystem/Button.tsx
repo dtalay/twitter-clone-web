@@ -1,35 +1,31 @@
+import clsx from 'clsx';
 import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  isDisabled?: boolean;
   color?: 'primary' | 'secondary';
   size?: 'medium' | 'large';
-  children?: React.ReactNode;
 }
 
 export const Button = ({
-  isDisabled = false,
   color = 'primary',
   size = 'large',
   children,
   ...rest
 }: ButtonProps) => {
+  const buttonClass = clsx(
+    'w-full font-bold rounded-full disabled:opacity-50',
+    {
+      'bg-primary-btn text-white enabled:hover:bg-primary-btn-hover': color === 'primary',
+      'bg-secondary-btn text-secondary-btn-label enabled:hover:bg-secondary-btn-hover': color === 'secondary',
+      'py-2.5 px-4 text-base leading-5': size === 'medium',
+      'py-4 px-7 text-lg leading-6': size === 'large',
+    }
+  );
+
   return (
     <button
       type="button"
-      disabled={isDisabled}
-      className={`w-full font-bold rounded-full 
-        ${isDisabled ? 'opacity-50' 
-        : (!isDisabled && color === 'primary') ? 'hover:bg-primary-btn-hover' 
-        : (!isDisabled && color === 'secondary') ? 'hover:bg-secondary-btn-hover' 
-        : null}
-        ${color === 'primary' ? 'bg-primary-btn text-white' 
-        : color === 'secondary' ? 'bg-secondary-btn text-secondary-btn-label' 
-        : null}
-        ${size === 'medium' ? 'py-2.5 px-4 text-base leading-5' 
-        : size === 'large' ? 'py-4 px-7 text-lg leading-6' 
-        : null}
-        `}
+      className={buttonClass}
       {...rest} 
     >
       {children}

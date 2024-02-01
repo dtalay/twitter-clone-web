@@ -39,29 +39,29 @@ export const Secondary: Story = {
 
 export const Primary_Disabled: Story = {
   args: {
-    isDisabled: true,
+    disabled: true,
     children: 'Follow',
   },
 };
 
 export const Secondary_Disabled: Story = {
   args: {
-    isDisabled: true,
+    disabled: true,
     color: 'secondary',
     children: 'Follow',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-    children: 'Tweet',
   },
 };
 
 export const Medium: Story = {
   args: {
     size: 'medium',
+    children: 'Tweet',
+  },
+};
+
+export const Large: Story = {
+  args: {
+    size: 'large',
     children: 'Tweet',
   },
 };
