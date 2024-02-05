@@ -1,24 +1,18 @@
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
+import Link, { LinkProps } from "next/link";
+import { Avatar, AvatarProps } from "../Avatar/Avatar";
 
-interface AvatarLinkProps {
-  imgSrc: string;
-  alt: string;
-  size?: "small" | "medium" | "large";
-  href: string;
-  onClick?: () => void;
-}
+type AvatarLinkProps = AvatarProps & LinkProps;
 
-export const AvatarLink = ({ imgSrc, alt, size, href }: AvatarLinkProps) => {
+export const AvatarLink = ({ 
+  imgSrc, alt, size, href 
+}: AvatarLinkProps) => {
   return (
     <Link href={href}>
-      <Image
-        src={imgSrc}
-        width={50}
-        height={50}
-        className={`${size} rounded-full`}
+      <Avatar
+        imgSrc={imgSrc}
         alt={alt}
+        size={size}
       />
     </Link>
   );

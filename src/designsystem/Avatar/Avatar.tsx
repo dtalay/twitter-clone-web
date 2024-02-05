@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-interface AvatarProps {
+export interface AvatarProps {
   imgSrc: string;
   alt: string;
   size?: "small" | "medium" | "large";

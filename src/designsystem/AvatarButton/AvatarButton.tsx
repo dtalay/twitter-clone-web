@@ -1,12 +1,7 @@
 import React from "react";
-import Image from "next/image";
+import { Avatar, AvatarProps } from "../Avatar/Avatar";
 
-interface AvatarButtonProps {
-  imgSrc: string;
-  alt: string;
-  size?: "small" | "medium" | "large";
-  onClick: () => void;
-}
+type AvatarButtonProps = AvatarProps & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const AvatarButton = ({
   imgSrc,
@@ -16,12 +11,10 @@ export const AvatarButton = ({
 }: AvatarButtonProps) => {
   return (
     <button onClick={onClick}>
-      <Image
-        src={imgSrc}
-        width={50}
-        height={50}
-        className={`${size} rounded-full`}
+      <Avatar
+        imgSrc={imgSrc}
         alt={alt}
+        size={size}
       />
     </button>
   );
