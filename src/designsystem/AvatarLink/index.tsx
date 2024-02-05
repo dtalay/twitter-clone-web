@@ -1,6 +1,6 @@
 import React from "react";
 import Link, { LinkProps } from "next/link";
-import { Avatar, AvatarProps } from "../Avatar/Avatar";
+import { Avatar, AvatarProps } from "../Avatar";
 
 type AvatarLinkProps = AvatarProps & LinkProps;
 
