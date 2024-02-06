@@ -1,7 +1,7 @@
 import React from "react";
 import { Avatar, AvatarProps } from "../Avatar";
 
-type AvatarButtonProps = AvatarProps & React.ButtonHTMLAttributes<HTMLButtonElement>;
+export type AvatarButtonProps = AvatarProps & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const AvatarButton = ({
   imgSrc,
